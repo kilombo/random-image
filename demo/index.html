@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>random-image demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../random-image.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+
+    </style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Basic random-image demo</h3>
+        <demo-snippet>
+            <template>
+          <random-image images-list='[
+            { "path": "http://www.buscoseo.com/wp-content/uploads/2015/07/HTML5.png", "title": "HTML5" },
+            { "path": "https://rolandocaldas.com/wp-content/uploads/2013/10/css3-html5-e1383236383597.png", "title": "HTML5 & CSS3" },
+            { "path": "https://www.wonderbits.net/posts/48/p-logo-ai.svg", "title": "Polymer" },
+            { "path": "https://frontendmasters.com/assets/google-developers-logo-vector.jpg", "title": "Google Developers Logo" },
+            { "path": "https://www.polymer-project.org/images/1.0/summit-2016-flag.png", "title": "Polymer Summit 2016" },
+            { "path": "https://i1.ytimg.com/vi/mN7IAaRdi_k/maxresdefault.jpg", "title": "Polymer" }
+          ]'></random-image>
+        </template>
+        </demo-snippet>
+    </div>
+</body>
+
+</html>

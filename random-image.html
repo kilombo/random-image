@@ -1,0 +1,62 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+
+<!--
+`random-image`
+Element to show random image from a given group.
+
+@demo demo/index.html
+-->
+
+<dom-module id="random-image">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <iron-image style="width:200px; height:200px;" sizing="contain" src$="{{imgSrc}}" title="{{imgTitle}}"></iron-image>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'random-image',
+
+      properties: {
+        imgSrc:{
+          type: String
+        },
+        imgTitle:{
+          type: String
+        },
+        imagesList:{
+          type: Object,
+          notify: true,
+          // When initializing a property to an object or array value, use a function to ensure that each element
+          // gets its own copy of the value, rather than having an object or array shared across all instances of the element
+          value: function() {
+              return [];
+          }
+        }
+      },
+      ready: function(){
+        console.log('random-image ready!');
+        console.log(this.imagesList);
+        var randomPos = this.pickRandomProperty(this.imagesList);
+        this.imgSrc = this.imagesList[randomPos].path;
+        this.imgTitle = this.imagesList[randomPos].title;
+      },
+      pickRandomProperty: function(obj) {
+        var result;
+        var count = 0;
+        for (var prop in obj)
+            if (Math.random() < 1/++count)
+               result = prop;
+               console.log(result);
+        return result;
+      }
+
+    });
+  </script>
+</dom-module>
