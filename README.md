@@ -1,6 +1,8 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://beta.webcomponents.org/element/owner/random-image)
+
 # \<random-image\>
 
-Element to show random image from a given group.
+A small Polymer element to show a random image from a given set.
 
 ## Install the Polymer-CLI
 
