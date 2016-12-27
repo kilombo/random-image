@@ -14,8 +14,13 @@ Element to show random image from a given group.
       :host {
         display: block;
       }
+      .is-circle{
+        border: 1px solid grey;
+border-radius: 50%;
+box-shadow: 0px 5px 10px #CCC;
+      }
     </style>
-    <iron-image style="width:200px; height:200px;" sizing="contain" src$="{{imgSrc}}" title="{{imgTitle}}"></iron-image>
+    <iron-image style="width:200px; height:200px;" class$="{{mode}}" sizing="contain" src$="{{imgSrc}}" title="{{imgTitle}}"></iron-image>
   </template>
 
     <script>
@@ -24,6 +29,11 @@ Element to show random image from a given group.
             is: 'random-image',
 
             properties: {
+                mode: {
+                    type: String,
+                    notify: true,
+                    value: ''
+                },
                 imgSrc: {
                     type: String
                 },
@@ -55,6 +65,8 @@ Element to show random image from a given group.
                 var randomPos = this._pickRandomProperty(this.imagesList);
                 this.imgSrc = this.imagesList[randomPos].path;
                 this.imgTitle = this.imagesList[randomPos].title;
+
+                // this.mode = 'is-circle';
             }
         });
     </script>
